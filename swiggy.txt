@@ -4,3 +4,7 @@ eggs
 keema roti
 dum biriyani
 curd
+killer fish
+beef mutton
+mandi
+kalyani biriyani
