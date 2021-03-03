@@ -1,0 +1,14 @@
+node('master') {
+    stage('checkout') {
+    git 'https://github.com/doradoleo123/petclinic'
+}
+stage('build') {
+   sh '/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/mvn3/bin/mvn clean package'
+}
+stage('test') {
+    junit 'target/surefire-reports/*.xml'
+}
+stage('archive') {
+		archiveArtifacts artifacts: 'target/*.?ar', followSymlinks: false
+}
+}
